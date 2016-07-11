@@ -8,3 +8,7 @@ get '/test' do
   'This is only a test!'
 end
 
+get '/giphy' do
+	erb :giphy
+end
+
