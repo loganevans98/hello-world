@@ -5,38 +5,50 @@ h1{
 	font-family: Andale Mono;
 }
 body{
-	background: white;
+	background: #e7ecf8;
 }
 
 form {
 	margin: 0 auto;
 	width: 340px;
+	font-family: Andale Mono;
+	display: flex;
 }
 
 input{
 	width: 250px;
-	padding: 10px 10px;
+	padding: 11px 11px;
 	border: solid;
 	border-width: 3px;
 	font-size: 20pt;
 	border-radius: 5px;
+	font-family: Andale Mono;
+	margin-right: 10px;
 }
 
 button{
 	width: 80px;
-	height: 57px;
+	height: 58px;
 	font: 20pt;
 	border: solid;
 	border-width: 3px;
 	font-size: 12pt;
 	background: white;
 	border-radius: 5px;
-	padding: 5px 5px;
+	font-family: Andale Mono;
 }
 
 .label {
 	font-style: italic;
+	font-family: Andale Mono;
 }
 p{
 	margin: 50 auto;
+	font-family: Andale Mono;
 }
+a{
+	font-family: Andale Mono;
+	color: black;
+	text-decoration: none;
+}
+
