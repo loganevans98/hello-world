@@ -2,29 +2,41 @@ h1{
 	color: black;
 	text-align: center;
 	text-decoration: underline;
+	font-family: Andale Mono;
 }
 body{
 	background: white;
 }
+
+form {
+	margin: 0 auto;
+	width: 340px;
+}
+
 input{
-	width:400px;
-	height: 50px;
+	width: 250px;
+	padding: 10px 10px;
 	border: solid;
 	border-width: 3px;
 	font-size: 20pt;
-	border-radius: 10px;
-	margin-left: 400px;
-	margin-top: 50px;
+	border-radius: 5px;
 }
+
 button{
 	width: 80px;
-	height: 50px;
+	height: 57px;
 	font: 20pt;
 	border: solid;
 	border-width: 3px;
 	font-size: 12pt;
 	background: white;
-	border-radius: 10px;
-	margin-top: -50px;
-	margin-left: 820px;
+	border-radius: 5px;
+	padding: 5px 5px;
+}
+
+.label {
+	font-style: italic;
+}
+p{
+	margin: 50 auto;
 }

@@ -1,16 +1,16 @@
 <html>
 <head>
 	<link href="/css/style.css" rel="stylesheet">
-	<title>Hello World</title>
+	<title><span class = "customFont">Hello World</span></title>
 </head>
 <body>
-	<h1>Giphy Roulette</h1>
+	<h1><span class = "customFont"> Giphy Roulette </span></h1>
 	<form action="/search_giphy" method="post">
 		<input placeholder="Enter a Topic" name="query" type="text" />
 		<button>Search!</button>
 	</form>
 
-	<p>You searched for: <%= query %></p>
+	<p>You searched for: <span class="label"> <%= query %></span></p>
 	<img src="<%= image_url %>">
 </body>
 </html>
