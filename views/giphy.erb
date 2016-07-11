@@ -5,5 +5,12 @@
 </head>
 <body>
 	<h1>Giphy Roulette</h1>
+	<form action="/search_giphy" method="post">
+		<input placeholder="Enter a Topic" name="query" type="text" />
+		<button>Search!</button>
+	</form>
+
+	<p>You searched for: <%= query %></p>
+	<img src="<%= image_url %>">
 </body>
 </html>
