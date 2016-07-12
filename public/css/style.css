@@ -2,7 +2,7 @@ h1{
 	color: black;
 	text-align: center;
 	text-decoration: underline;
-	font-family: Andale Mono;
+	font-family: Futura;
 }
 body{
 	background: #e7ecf8;
@@ -11,7 +11,7 @@ body{
 form {
 	margin: 0 auto;
 	width: 340px;
-	font-family: Andale Mono;
+	font-family: Futura;
 	display: flex;
 }
 
@@ -22,32 +22,32 @@ input{
 	border-width: 3px;
 	font-size: 20pt;
 	border-radius: 5px;
-	font-family: Andale Mono;
+	font-family: Futura;
 	margin-right: 10px;
 }
 
 button{
 	width: 80px;
-	height: 58px;
+	height: 64px;
 	font: 20pt;
 	border: solid;
 	border-width: 3px;
 	font-size: 12pt;
 	background: white;
 	border-radius: 5px;
-	font-family: Andale Mono;
+	font-family: Futura;
 }
 
 .label {
 	font-style: italic;
-	font-family: Andale Mono;
+	font-family: Futura;
 }
 p{
 	margin: 50 auto;
-	font-family: Andale Mono;
+	font-family: Futura;
 }
 a{
-	font-family: Andale Mono;
+	font-family: Futura;
 	color: black;
 	text-decoration: none;
 }
