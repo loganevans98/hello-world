@@ -1,0 +1,18 @@
+<html>
+<head>
+	<link href="/css/style.css" rel="stylesheet">
+	<title>Hello World</title>
+</head>
+<body>
+	<h1> <a href ="/translate"> Giphy Translate </a> </h1>
+	<form action="/translate_giphy" method="post">
+		<input placeholder="Your Text Here" name="query" type="text" />
+		<button>Translate</button>
+	</form>
+	<p>
+		<% image_urls.each do |image_url| %>
+			<img src="<%= image_url %>" />
+		<% end %>
+	</p>
+</body>
+</html>

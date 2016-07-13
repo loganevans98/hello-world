@@ -25,3 +25,20 @@ post '/search_giphy' do
 							image_url: response.parse["data"]["image_url"]
 						}
 end
+get '/translate' do
+	erb :translate, locals: { query: '', image_urls: [] }
+end
+post '/translate_giphy' do
+	query = params[:query]
+	words = query.split
+	image_urls = []
+	words.each do |word|
+		image_urls.push HTTP.get("http://api.giphy.com/v1/gifs/translate?s=#{word}&api_key=dc6zaTOxFJmzC").parse["data"]["images"]["fixed_height_small"]["url"]
+	end
+
+	puts image_urls
+	erb :translate, locals: {
+							query: query,
+							image_urls: image_urls
+						}
+end
