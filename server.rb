@@ -11,7 +11,7 @@ get '/test' do
   'This is only a test!'
 end
 
-get '/giphy' do
+get '/roulette' do
 	erb :giphy, locals: { query: '', image_url: '' }
 end
 
