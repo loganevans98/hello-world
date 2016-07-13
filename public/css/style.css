@@ -4,6 +4,11 @@ h1{
 	text-decoration: underline;
 	font-family: Futura;
 }
+h3{
+	color: black;
+	text-align: center;
+	font-family: Futura;
+}
 body{
 	background: #e7ecf8;
 }
@@ -50,5 +55,8 @@ a{
 	font-family: Futura;
 	color: black;
 	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
 }
 
