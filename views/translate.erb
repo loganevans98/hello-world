@@ -4,11 +4,14 @@
 	<title>Hello World</title>
 </head>
 <body>
-	<h1> <a href ="/translate"> Giphy Translate </a> </h1>
+	<a href = "/"><span class="back">↫ go home</span></a>
+	<h1> <a href ="/translate"> GIPHY TRANSLATE </a> </h1>
 	<form action="/translate_giphy" method="post">
 		<input placeholder="Your Text Here" name="query" type="text" />
 		<button>Translate</button>
+
 	</form>
+	<p>You entered: <span class="label"> <%= query %></span></p>
 	<p>
 		<% image_urls.each do |image_url| %>
 			<img src="<%= image_url %>" />

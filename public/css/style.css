@@ -59,4 +59,8 @@ a{
 a:hover{
 	text-decoration: underline;
 }
+.back{
+	font-style: none;
+	font-family: Futura;
+}
 
