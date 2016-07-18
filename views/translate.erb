@@ -11,9 +11,9 @@
 		<button>Translate</button>
 
 	</form>
-	<p>You entered: <span class="label"> <%= query %></span></p>
+	<p>You entered: <span class="label"> <%= @query %></span></p>
 	<p>
-		<% image_urls.each do |image_url| %>
+		<% @image_urls.each do |image_url| %>
 			<img src="<%= image_url %>" />
 		<% end %>
 	</p>

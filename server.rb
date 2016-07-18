@@ -15,7 +15,9 @@ get '/test' do
 end
 
 get '/roulette' do
-	erb :giphy, locals: { query: '', image_url: '' }
+	@query = ''
+	@image_url = ''
+	erb :giphy  
 end
 
 post '/search_giphy' do
@@ -23,10 +25,13 @@ post '/search_giphy' do
 	escaped_query = URI.escape(query)
 	response = HTTP.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=#{escaped_query}")
 
-	erb :giphy, locals: {
-							query: query,
-							image_url: response.parse["data"]["image_url"]
-						}
+	@query = query
+	@image_url = response.parse["data"]["image_url"]
+	r = Result.new
+	r.query = @query
+	r.image_url = @image_url
+	r.save
+	erb :giphy
 end
 get '/translate' do
 	erb :translate, locals: { query: '', image_urls: [] }
@@ -40,8 +45,12 @@ post '/translate_giphy' do
 	end
 
 	puts image_urls
-	erb :translate, locals: {
-							query: query,
-							image_urls: image_urls
-						}
+	@query = query
+	@image_urls = image_urls
+	erb :translate
+
+end
+get '/results' do
+	@results = Result.all 
+	erb 'results/index'.to_sym
 end

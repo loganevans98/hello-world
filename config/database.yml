@@ -1,5 +1,5 @@
 development:
   adapter: postgresql
-  database: development
+  database: hello-world-development
   username: postgres
   host: localhost
