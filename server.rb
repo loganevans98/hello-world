@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'http'
 require 'uri'
+require 'sinatra/activerecord'
+require './config/environments'
+require './models/result'
 
 
 get '/' do
