@@ -51,6 +51,6 @@ post '/translate_giphy' do
 
 end
 get '/results' do
-	@results = Result.all 
+	@results = Result.all.order(created_at: :desc) 
 	erb 'results/index'.to_sym
 end
