@@ -8,10 +8,10 @@
 <br>
 <a href = "/roulette"><span class="back">↫ go back to giphy roulette</span></a>
 <h1> <a href = "/results"> PAST SEARCHES </a></h1>
+<ul class="results">
 <% @results.each do |result| %>
-			<li>
-				<a href = "<%= result.image_url %>"><%= result.query %></a>
-			</li>
+				<li><a href = "<%= result.image_url %>"><%= result.query %></a></li>
 		<% end %>
+</ul>
 </body>
 </html>
