@@ -52,7 +52,7 @@ end
 
 get '/translate' do
 	@query = ''
-	@image_url = []
+	@image_urls = []
 	erb :translate
 end
 
