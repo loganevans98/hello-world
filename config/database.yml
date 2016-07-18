@@ -1,5 +1,8 @@
-development:
+development: &default
   adapter: postgresql
   database: hello-world-development
   username: postgres
   host: localhost
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
