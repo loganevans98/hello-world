@@ -11,7 +11,7 @@
 		<button>Search</button>
 	</form>
 	<h2><a href= "/results">Past Searches</a></h2>
-	<p>You searched for: <span class="label"> <%= @query %></span></p>
-	<img src="<%= @image_url %>">
+	<p>You searched for: <span class="label"> <%= @result.query %></span></p>
+	<img src="<%= @result.image_url %>">
 </body>
 </html>

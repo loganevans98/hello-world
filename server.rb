@@ -5,19 +5,23 @@ require 'sinatra/activerecord'
 require './config/environments'
 require './models/result'
 
+#-------------------#
+# Home              #
+#-------------------#
 
 get '/' do
   erb :index
 end
 
-get '/test' do
-  'This is only a test!'
-end
+
+
+#-------------------#
+# Roulette          #
+#-------------------#
 
 get '/roulette' do
-	@query = ''
-	@image_url = ''
-	erb :giphy  
+	@result = Result.new
+	erb :giphy
 end
 
 post '/search_giphy' do
@@ -25,17 +29,33 @@ post '/search_giphy' do
 	escaped_query = URI.escape(query)
 	response = HTTP.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=#{escaped_query}")
 
-	@query = query
-	@image_url = response.parse["data"]["image_url"]
-	r = Result.new
-	r.query = @query
-	r.image_url = @image_url
-	r.save
+	@result = Result.create(query: query, image_url: response.parse["data"]["image_url"])
+
 	erb :giphy
 end
-get '/translate' do
-	erb :translate, locals: { query: '', image_urls: [] }
+
+get '/results' do
+	@results = Result.all.order(created_at: :desc) 
+	erb 'results/index'.to_sym
 end
+
+get '/results/:id' do
+	@result = Result.find params[:id]
+	erb :giphy
+end
+
+
+
+#-------------------#
+# Translate         #
+#-------------------#
+
+get '/translate' do
+	@query = ''
+	@image_url = []
+	erb :translate
+end
+
 post '/translate_giphy' do
 	query = params[:query]
 	words = query.split
@@ -48,9 +68,4 @@ post '/translate_giphy' do
 	@query = query
 	@image_urls = image_urls
 	erb :translate
-
-end
-get '/results' do
-	@results = Result.all.order(created_at: :desc) 
-	erb 'results/index'.to_sym
 end

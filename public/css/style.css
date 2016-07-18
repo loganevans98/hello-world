@@ -73,7 +73,7 @@ a:hover{
 .results{
 	font-family: Futura;
 	padding: 10px;
-	margin: 30 40;
+	margin: auto 40;
 	list-style: none;
 }
 .results > li:before {
