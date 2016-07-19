@@ -30,7 +30,7 @@ post '/search_giphy' do
 	escaped_text = URI.escape(query_text)
 	response = HTTP.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=#{escaped_text}")
 	@query_text = query_text
-	query = Query.create(text: query_text )
+	query = Query.find_or_create_by(text: query_text)
 	@result = Result.create(image_url: response.parse["data"]["image_url"], query_id: query.id)
 	
 
