@@ -69,3 +69,6 @@ post '/translate_giphy' do
 	@image_urls = image_urls
 	erb :translate
 end
+
+
+
