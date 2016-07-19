@@ -4,6 +4,8 @@
 		<input placeholder="Enter a Topic" name="query" type="text" />
 		<button>Search</button>
 	</form>
-	<h2><a href= "/results">Past Searches</a></h2>
-	<p>You searched for: <span class="label"> <%= @result.query %></span></p>
-	<img src="<%= @result.image_url %>">
+	<h2><a href= "/queries">Past Searches</a></h2>
+	<p>You searched for: <span class="label"> <%= @query.text %></span></p>
+	<% @query.results.each do |result| %>
+		<img src="<%= result.image_url %>">
+	<% end %>

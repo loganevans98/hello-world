@@ -4,6 +4,7 @@ require 'uri'
 require 'sinatra/activerecord'
 require './config/environments'
 require './models/result'
+require './models/query'
 
 #-------------------#
 # Home              #
@@ -21,29 +22,30 @@ end
 
 get '/roulette' do
 	@result = Result.new
-	erb :giphy
+	erb 'results/show'.to_sym
 end
 
 post '/search_giphy' do
-	query = params[:query]
-	escaped_query = URI.escape(query)
-	response = HTTP.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=#{escaped_query}")
+	query_text = params[:query_text]
+	escaped_text = URI.escape(query_text)
+	response = HTTP.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=#{escaped_text}")
+	@query_text = query_text
+	query = Query.create(text: query_text )
+	@result = Result.create(image_url: response.parse["data"]["image_url"], query_id: query.id)
+	
 
-	@result = Result.create(query: query, image_url: response.parse["data"]["image_url"])
-
-	erb :giphy
+	erb 'results/show'.to_sym
 end
 
-get '/results' do
-	@results = Result.all.order(created_at: :desc) 
-	erb 'results/index'.to_sym
+get '/queries' do
+	@queries = Query.all.order(created_at: :desc) 
+	erb 'queries/index'.to_sym
 end
 
-get '/results/:id' do
-	@result = Result.find params[:id]
-	erb :giphy
+get '/queries/:id' do
+	@query = Query.find params[:id]
+	erb 'queries/show'.to_sym
 end
-
 
 
 #-------------------#
