@@ -5,6 +5,7 @@ require 'sinatra/activerecord'
 require './config/environments'
 require './models/result'
 require './models/query'
+require 'obscenity'
 
 #-------------------#
 # Home              #
@@ -27,7 +28,8 @@ end
 
 post '/search_giphy' do
 	query_text = params[:query_text]
-	escaped_text = URI.escape(query_text)
+	clean_text = Obscenity.sanitize(query_text)
+	escaped_text = URI.escape(clean_text)
 	response = HTTP.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=#{escaped_text}")
 	@query_text = query_text
 	query = Query.find_or_create_by(text: query_text)
