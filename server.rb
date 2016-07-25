@@ -35,19 +35,24 @@ post '/search_giphy' do
 	@query_text = query_text
 	query = Query.find_or_create_by(text: query_text)
 	@result = Result.create(image_url: response.parse["data"]["image_url"], query_id: query.id)
-	
+
 
 	erb 'results/show'.to_sym
 end
 
 get '/queries' do
-	@queries = Query.all.order(created_at: :desc) 
+	@queries = Query.all.order(created_at: :desc)
 	erb 'queries/index'.to_sym
 end
 
 get '/queries/:id' do
 	@query = Query.find params[:id]
 	erb 'queries/show'.to_sym
+end
+
+get '/admin' do
+  @queries = Query.all.order(created_at: :desc)
+  erb 'admin/index'.to_sym
 end
 
 
@@ -74,6 +79,3 @@ post '/translate_giphy' do
 	@image_urls = image_urls
 	erb :translate
 end
-
-
-
