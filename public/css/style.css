@@ -19,14 +19,14 @@ body{
 	background: #e7ecf8;
 }
 
-form {
+.search-form {
 	margin: 0 auto;
 	width: 340px;
 	font-family: Futura;
 	display: flex;
 }
 
-input{
+input {
 	width: 250px;
 	padding: 11px 11px;
 	border: solid;
@@ -37,7 +37,7 @@ input{
 	margin-right: 10px;
 }
 
-button{
+.search-button{
 	width: 80px;
 	height: 64px;
 	font: 20pt;
@@ -80,4 +80,35 @@ a:hover{
 	content:"❋";
 	font-size: 9pt;
 	padding-right: 5px;
+}
+
+.delete-result-form {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.delete-result-button {
+	height: 30px;
+	width: 30px;
+	padding: 0;
+
+	border: 3px solid black;
+	border-radius: 50%;
+	background-color: transparent;
+	-webkit-filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+	filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+
+	font-size: 20px;
+	line-height: 0;
+	font-weight: 900;
+}
+
+.result-box {
+	position: relative;
+	display: inline-block;
+}
+
+.result-box-image {
+	height: 200px;
 }

@@ -1,8 +1,8 @@
 	<a href = "/"><span class="back">↫ go home</span></a>
 	<h1> <a href = "/roulette"> GIPHY ROULETTE </a></h1>
-	<form action="/search_giphy" method="post">
+	<form class="search-form" action="/search_giphy" method="post">
 		<input placeholder="Enter a Topic" name="query" type="text" />
-		<button>Search</button>
+		<button class="search-button">Search</button>
 	</form>
 	<h2><a href= "/queries">Past Searches</a></h2>
 	<p>You searched for: <span class="label"> <%= @query.text %></span></p>

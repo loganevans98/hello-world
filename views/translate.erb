@@ -1,10 +1,10 @@
 	<a href = "/"><span class="back">↫ go home</span></a>
 	<h1> <a href ="/translate"> GIPHY TRANSLATE </a> </h1>
-	<form action="/translate_giphy" method="post">
+	<form class="search-form" action="/translate_giphy" method="post">
 		<input placeholder="Your Text Here" name="query" type="text" />
-		<button>Translate</button>
-
+		<button class="search-button">Translate</button>
 	</form>
+
 	<p>You entered: <span class="label"> <%= @query %></span></p>
 	<p>
 		<% @image_urls.each do |image_url| %>

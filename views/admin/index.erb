@@ -4,6 +4,12 @@
 <% @queries.each  do |query| %>
   <p><%= query.text %> (<%=query.results.count %>x)</p>
   <% query.results.each do |result| %>
-    <img src="<%= result.image_url %>">
-    <% end %>
+    <div class="result-box">
+      <img class="result-box-image" src="<%= result.image_url %>">
+      <form class="delete-result-form" action="/results/<%= result.id %>" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="delete-result-button">&times;</button>
+      </form>
+    </div>
+  <% end %>
 <% end %>
