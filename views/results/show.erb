@@ -1,9 +1,2 @@
-	<a href = "/"><span class="back">↫ go home</span></a>
-	<h1> <a href = "/roulette"> GIPHY ROULETTE </a></h1>
-	<form class="search-form" action="/search_giphy" method="post">
-		<input placeholder="Enter a Topic" name="query_text" type="text" />
-		<button class="search-button">Search</button>
-	</form>
-	<h2><a href= "/queries">Past Searches</a></h2>
-	<p>You searched for: <span class="label"> <%= @query_text %></span></p>
-		<img src="<%= @result.image_url %>">
+<%= erb 'results/form'.to_sym %>
+<img src="<%= @result.image_url %>">
