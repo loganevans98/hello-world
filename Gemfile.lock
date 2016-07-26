@@ -18,6 +18,7 @@ GEM
     concurrent-ruby (1.0.2)
     domain_name (0.5.20160615)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.1.1)
     http (2.0.2)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -61,6 +62,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  dotenv
   http
   obscenity
   pg

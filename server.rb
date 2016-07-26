@@ -7,6 +7,8 @@ require './models/result'
 require './models/query'
 require 'obscenity'
 require './config/pokemon_names'
+require 'dotenv'
+Dotenv.load
 
 helpers do
   def protected!
