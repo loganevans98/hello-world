@@ -57,10 +57,7 @@ get '/admin' do
 end
 
 delete '/results/:id' do
-  # Make sure they have permission to destroy
-  @result = Result.find params[:id]
-  @result.destroy!
-  # Make sure we also delete the query if it has no results now
+  Query.destroy_result(params[:id])
 end
 
 
