@@ -32,13 +32,20 @@ post '/search_giphy' do
 	clean_text = Obscenity.replacement(Pokemon::NAMES.sample).sanitize(query_text)
 	escaped_text = URI.escape(clean_text)
 	response = HTTP.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=#{escaped_text}&rating=pg")
-	@query_text = query_text
-	query = Query.find_or_create_by(text: query_text)
-	@result = Result.create(image_url: response.parse["data"]["image_url"], query_id: query.id)
+  @query_text = query_text
 
+  no_results = response.parse["data"].empty?
 
-	erb 'results/show'.to_sym
+  if no_results
+    erb 'results/no_results'.to_sym
+  else
+  	query = Query.find_or_create_by(text: query_text)
+  	@result = Result.create(image_url: response.parse["data"]["image_url"], query_id: query.id)
+
+  	erb 'results/show'.to_sym
+  end
 end
+
 
 get '/queries' do
 	@queries = Query.all.order(created_at: :desc)

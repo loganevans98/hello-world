@@ -129,3 +129,7 @@ a:hover{
 .query-text:hover .delete-query-button{
 	display: inline;
 }
+
+.no-results-text{
+	font-size: 36px;
+}

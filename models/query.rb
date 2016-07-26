@@ -11,4 +11,5 @@ class Query < ActiveRecord::Base
 	    query.destroy!
 	  end
 	end
+	
 end
