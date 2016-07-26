@@ -2,14 +2,19 @@
 <h1>Admin</h1>
 
 <% @queries.each  do |query| %>
-  <p><%= query.text %> (<%=query.results.count %>x)</p>
-  <% query.results.each do |result| %>
-    <div class="result-box">
-      <img class="result-box-image" src="<%= result.image_url %>">
-      <form class="delete-result-form" action="/results/<%= result.id %>" method="post">
-        <input type="hidden" name="_method" value="DELETE">
-        <button type="submit" class="delete-result-button">&times;</button>
-      </form>
-    </div>
-  <% end %>
+  <div class="query-box">
+    <p><%= query.text %> (<span class="result-count"><%=query.results.count %></span>x)</p>
+    <% query.results.each do |result| %>
+      <div class="result-box">
+        <img class="result-box-image" src="<%= result.image_url %>">
+        <form class="delete-result-form" action="/results/<%= result.id %>" method="post">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="delete-result-button" data-id="<%= result.id %>">&times;</button>
+        </form>
+      </div>
+    <% end %>
+  </div>
 <% end %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="javascripts/admin.js"></script>

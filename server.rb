@@ -61,7 +61,6 @@ delete '/results/:id' do
   @result = Result.find params[:id]
   @result.destroy!
   # Make sure we also delete the query if it has no results now
-  redirect to("/admin")
 end
 
 

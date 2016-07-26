@@ -107,6 +107,7 @@ a:hover{
 .result-box {
 	position: relative;
 	display: inline-block;
+	overflow: hidden;
 }
 
 .result-box-image {
