@@ -1,6 +1,6 @@
 $(function(){
+
   $('.delete-result-button').on('click', function(event){
-    event.preventDefault();
     var $button = $(event.target);
     var resultId = $button.data('id');
 
@@ -24,7 +24,21 @@ $(function(){
         });
       }
     });
+  });
 
+  $('.delete-query-button').on('click', function(event) {
+    var $button = $(event.target);
+    var queryId = $button.data('id');
+
+    $.ajax('/queries/' + queryId, {
+      method: 'delete',
+      success: function(){
+        var $queryBox = $button.closest('.query-box');
+        $queryBox.animate({height: 0}, 400, 'swing', function(){
+          $queryBox.remove();
+        });
+      }
+    });
   });
 
 });

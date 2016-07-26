@@ -60,6 +60,11 @@ delete '/results/:id' do
   Query.destroy_result(params[:id])
 end
 
+delete '/queries/:id' do
+  query = Query.find params[:id]
+  query.destroy!
+end
+
 
 #-------------------#
 # Translate         #

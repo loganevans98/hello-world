@@ -82,16 +82,13 @@ a:hover{
 	padding-right: 5px;
 }
 
-.delete-result-form {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
-
 .delete-result-button {
+	position: absolute;
 	height: 30px;
 	width: 30px;
 	padding: 0;
+	top: 10px;
+	right: 10px;
 
 	border: 3px solid black;
 	border-radius: 50%;
@@ -112,4 +109,23 @@ a:hover{
 
 .result-box-image {
 	height: 200px;
+}
+
+.delete-query-button {
+	display: none;
+	height: 20px;
+	width: 20px;
+	padding: 0;
+
+	border: 2px solid black;
+	border-radius: 50%;
+	background-color: transparent;
+
+	font-size: 17px;
+	line-height: 0;
+	font-weight: 700;
+}
+
+.query-text:hover .delete-query-button{
+	display: inline;
 }

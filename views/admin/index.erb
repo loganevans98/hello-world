@@ -3,14 +3,15 @@
 
 <% @queries.each  do |query| %>
   <div class="query-box">
-    <p><%= query.text %> (<span class="result-count"><%=query.results.count %></span>x)</p>
+    <p>
+      <span class="query-text"><%= query.text %> (<span class="result-count"><%=query.results.count %></span>x)
+      <button type="submit" class="delete-query-button" data-id="<%= query.id %>">&times;</button> </span>
+    </p>
+
     <% query.results.each do |result| %>
       <div class="result-box">
         <img class="result-box-image" src="<%= result.image_url %>">
-        <form class="delete-result-form" action="/results/<%= result.id %>" method="post">
-          <input type="hidden" name="_method" value="DELETE">
-          <button type="submit" class="delete-result-button" data-id="<%= result.id %>">&times;</button>
-        </form>
+        <button type="submit" class="delete-result-button" data-id="<%= result.id %>">&times;</button>
       </div>
     <% end %>
   </div>
