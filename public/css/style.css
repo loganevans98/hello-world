@@ -133,3 +133,20 @@ a:hover{
 .no-results-text{
 	font-size: 36px;
 }
+
+.result-image {
+	width: 100%;
+	padding: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .bricklayer-column-sizer {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bricklayer-column-sizer {
+    width: 33.3%;
+  }
+}
