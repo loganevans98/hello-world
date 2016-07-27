@@ -1,9 +1,21 @@
-<a href = "/"><span class="back">↫ go home</span></a>
+<a href="/"><span class="back">↫ go home</span></a>
 <br>
-<a href = "/roulette"><span class="back">↫ go back to giphy roulette</span></a>
+<a href="/roulette"><span class="back">↫ go back to giphy roulette</span></a>
 <h1> <a href = "/queries"> PAST SEARCHES </a></h1>
-<ul class="results">
+<ul class="results bricklayer">
 	<% @queries.each do |query| %>
-		<li><a href="/queries/<%= query.id %>"><%= query.text %> (<%=query.results.count %>x)</a></li>
+		<li>
+			<a class="result" href="/queries/<%= query.id %>">
+				<div class="result-image-details">
+					<p class="result-image-query-text"><%= query.text %></p>
+				</div>
+				<img class="result-image" src="<%= query.results.first.image_url %>">
+			</a>
+		</li>
 	<% end %>
 </ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js"></script>
+<script src="javascripts/queries_index.js"></script>

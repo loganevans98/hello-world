@@ -76,10 +76,35 @@ a:hover{
 	margin: auto 40;
 	list-style: none;
 }
-.results > li:before {
-	content:"❋";
-	font-size: 9pt;
-	padding-right: 5px;
+
+.result {
+	position: relative;
+	display: block;
+	margin: 10px 0;
+}
+
+.result:hover .result-image-details {
+	/*Something*/
+	display: block;
+}
+
+.result-image-details {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0.7;
+	color: white;
+	background: black;
+}
+
+.result-image-query-text{
+  margin: 0.5vw 1vw;
+	font-size: 4vw;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .delete-result-button {
@@ -136,8 +161,8 @@ a:hover{
 
 .result-image {
 	width: 100%;
-	padding: 5px;
 }
+
 
 @media screen and (min-width: 768px) {
   .bricklayer-column-sizer {
