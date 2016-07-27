@@ -30,6 +30,7 @@ end
 #-------------------#
 
 get '/' do
+  @image_url = Result.last.image_url
   erb :index
 end
 

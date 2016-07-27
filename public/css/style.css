@@ -17,15 +17,8 @@ h3{
 }
 body{
 	background: #e7ecf8;
+	margin: 0;
 }
-
-.search-form {
-	margin: 0 auto;
-	width: 340px;
-	font-family: Futura;
-	display: flex;
-}
-
 input {
 	width: 250px;
 	padding: 11px 11px;
@@ -36,6 +29,73 @@ input {
 	font-family: Futura;
 	margin-right: 10px;
 }
+p{
+	margin: 50 auto;
+	font-family: Futura;
+}
+a{
+	font-family: Futura;
+	color: black;
+	text-decoration: none;
+	color: inherit;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+.home-page {
+	background: white;
+	margin: 0;
+	height: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.home-page-image {
+	position: absolute;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.home-page-shade {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.7;
+}
+
+.home-page-content {
+	z-index: 1;
+	color: white;
+	opacity: 0.7;
+}
+
+.home-page-title {
+	font-family: Futura;
+	font-size: 10vw;
+	text-decoration: none;
+	margin: 0;
+	color: white;
+}
+
+.home-page-links {
+  display: flex;
+  justify-content: space-around;
+	font-size: 2vw;
+}
+
+.search-form {
+	margin: 0 auto;
+	width: 340px;
+	font-family: Futura;
+	display: flex;
+}
+
 
 .search-button{
 	width: 80px;
@@ -52,19 +112,6 @@ input {
 .label {
 	font-style: italic;
 	font-family: Futura;
-}
-p{
-	margin: 50 auto;
-	font-family: Futura;
-}
-a{
-	font-family: Futura;
-	color: black;
-	text-decoration: none;
-	color: inherit;
-}
-a:hover{
-	text-decoration: underline;
 }
 .back{
 	font-style: none;
@@ -84,7 +131,6 @@ a:hover{
 }
 
 .result:hover .result-image-details {
-	/*Something*/
 	display: block;
 }
 
@@ -161,6 +207,8 @@ a:hover{
 
 .result-image {
 	width: 100%;
+	display: block;
+	margin: 10px 0;
 }
 
 
@@ -174,4 +222,14 @@ a:hover{
   .bricklayer-column-sizer {
     width: 33.3%;
   }
+}
+
+.home-page-image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-size: cover;
+	background-position: center center;
 }

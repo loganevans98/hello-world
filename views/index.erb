@@ -1,7 +1,16 @@
-<h1>Hello World!</h1>
-<br>
-<center>
-	<span class = "link1"><a href ="/roulette">Giphy Roulette</a></span>
-	<h3>❋</h3>
-	<span class = "link2"><a href ="/translate">Giphy Translate</a></span>
-</center>
+<div class="home-page">
+	<div class="home-page-image"></div>
+	<div class="home-page-shade"></div>
+	<div class="home-page-content">
+		<h1 class="home-page-title">warm lake</h1>
+		<div class="home-page-links">
+			<a href ="/roulette">roulette</a>
+			<a href ="/translate">translate</a>
+		</div>
+	</div>
+</div>
+<style>
+	.home-page-image {
+		background-image: url(<%= @image_url %>);
+	}
+</style>
