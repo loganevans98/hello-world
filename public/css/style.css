@@ -1,9 +1,12 @@
 h1{
 	color: black;
 	text-align: center;
-	text-decoration: underline;
+	text-decoration: none;
 	font-family: Futura;
+	text-transform: lowercase;
+	font-size: 3vw;
 }
+
 h2{
 	color: black;
 	text-align: center;
@@ -16,7 +19,7 @@ h3{
 	font-family: Futura;
 }
 body{
-	background: #e7ecf8;
+	background: white;
 	margin: 0;
 }
 input {
@@ -28,6 +31,7 @@ input {
 	border-radius: 5px;
 	font-family: Futura;
 	margin-right: 10px;
+	text-transform:lowercase;
 }
 p{
 	margin: 50 auto;
@@ -151,6 +155,7 @@ a:hover{
 	font-size: 4vw;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	text-transform: lowercase;
 }
 
 .delete-result-button {
