@@ -30,7 +30,7 @@ end
 #-------------------#
 
 get '/' do
-  @image_url = Result.last.image_url
+  @image_url = Result.limit(1).order("RANDOM()").first.image_url
   erb :index
 end
 
