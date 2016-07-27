@@ -8,6 +8,7 @@ require './models/query'
 require 'obscenity'
 require './config/pokemon_names'
 require 'dotenv'
+require 'json'
 Dotenv.load
 
 helpers do
@@ -44,6 +45,7 @@ get '/roulette' do
 end
 
 post '/search_giphy' do
+  content_type :json
 	query_text = params[:query_text]
 	clean_text = Obscenity.replacement(Pokemon::NAMES.sample).sanitize(query_text)
 	escaped_text = URI.escape(clean_text)
@@ -58,7 +60,7 @@ post '/search_giphy' do
   	query = Query.find_or_create_by(text: query_text)
   	@result = Result.create(image_url: response.parse["data"]["image_url"], query_id: query.id)
 
-  	erb 'results/show'.to_sym
+  	{ image_url: @result.image_url, query_text: query_text }.to_json
   end
 end
 
