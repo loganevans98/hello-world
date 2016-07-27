@@ -9,6 +9,17 @@
 <p>You searched for: <span class="label"></span></p>
 <div class="search-results bricklayer"></div>
 
+<div class="past-queries bricklayer">
+	<% @queries.each do |query| %>
+		<a class="result" href="/queries/<%= query.id %>">
+			<div class="result-image-details">
+				<p class="result-image-query-text"><%= query.text %></p>
+			</div>
+			<img class="result-image" src="<%= query.results.first.image_url %>">
+		</a>
+	<% end %>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js"></script>

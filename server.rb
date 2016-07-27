@@ -42,6 +42,7 @@ end
 
 get '/roulette' do
 	@result = Result.new
+  @queries = Query.all.order("RANDOM()").limit(24)
 	erb 'results/show'.to_sym
 end
 
