@@ -9,8 +9,8 @@
 		</div>
 	</div>
 </div>
-<style>
-	.home-page-image {
-		background-image: url(<%= @image_url %>);
-	}
-</style>
+<script>
+	window.homePageImageUrl = "<%= @image_url %>";
+</script>
+<script src="/javascripts/vibrant.min.js"></script>
+<script src="/javascripts/home.js"></script>
