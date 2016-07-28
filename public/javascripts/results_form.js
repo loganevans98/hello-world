@@ -9,7 +9,7 @@ $(function(){
     var $form = $(event.target);
     var $input = $form.find('[name="query_text"]');
     var query = $input.val();
-    
+
     $('.past-queries').remove();
 
     $.ajax('/search_giphy', {
@@ -19,7 +19,6 @@ $(function(){
         var $image = $('<img class="result-image" src="' + data.image_url + '" />');
 
         searchResults.prepend($image[0]);
-        $('.label').text(data.query_text);
         $input.val(data.query_text);
       }
     });

@@ -1,12 +1,9 @@
 <%= erb 'roulette_header'.to_sym %>
 
-<form class="search-form" action="/search_giphy" method="post">
-  <input placeholder="Enter a Topic" name="query_text" type="text" />
-  <button class="search-button">search</button>
-</form>
+<%= erb 'results/form'.to_sym %>
 
 <h2><a href= "/queries">past searches</a></h2>
-<p>You searched for: <span class="label"></span></p>
+
 <div class="search-results bricklayer"></div>
 
 <div class="past-queries bricklayer">

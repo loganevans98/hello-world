@@ -46,6 +46,14 @@ a{
 a:hover{
 	text-decoration: underline;
 }
+.label {
+	font-style: italic;
+	font-family: Futura;
+}
+.back{
+	font-style: none;
+	font-family: Futura;
+}
 
 .home-page {
 	background: white;
@@ -93,6 +101,15 @@ a:hover{
 	font-size: 2vw;
 }
 
+.home-page-image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-size: cover;
+	background-position: center center;
+}
 .search-form {
 	margin: 0 auto;
 	width: 340px;
@@ -113,27 +130,13 @@ a:hover{
 	font-family: Futura;
 }
 
-.label {
-	font-style: italic;
-	font-family: Futura;
-}
-.back{
-	font-style: none;
-	font-family: Futura;
-}
-.results{
-	font-family: Futura;
-	padding: 10px;
-	margin: auto 40;
-	list-style: none;
-}
-
 .result {
 	position: relative;
 	display: block;
 	margin: 10px 0;
 }
 
+.translate-result:hover .result-image-details,
 .result:hover .result-image-details {
 	display: block;
 }
@@ -229,12 +232,9 @@ a:hover{
   }
 }
 
-.home-page-image {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-size: cover;
-	background-position: center center;
+.translate-result {
+	float: left;
+	position: relative;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }

@@ -102,20 +102,17 @@ end
 
 get '/translate' do
 	@query = ''
-	@image_urls = []
+	@words = []
 	erb :translate
 end
 
 post '/translate_giphy' do
 	query = params[:query]
-	words = query.split
-	image_urls = []
-	words.each do |word|
-		image_urls.push HTTP.get("http://api.giphy.com/v1/gifs/translate?s=#{word}&api_key=dc6zaTOxFJmzC").parse["data"]["images"]["fixed_height_small"]["url"]
+	@words = query.split.map do |word|
+    result = HTTP.get("http://api.giphy.com/v1/gifs/translate?s=#{word}&api_key=dc6zaTOxFJmzC&rating=pg")
+    image_url = result.parse["data"]["images"]["fixed_height"]["url"]
+		{ image_url: image_url, text: word }
 	end
 
-	puts image_urls
-	@query = query
-	@image_urls = image_urls
 	erb :translate
 end

@@ -5,9 +5,13 @@
 		<button class="search-button">Translate</button>
 	</form>
 
-	<p>You entered: <span class="label"> <%= @query %></span></p>
 	<p>
-		<% @image_urls.each do |image_url| %>
-			<img src="<%= image_url %>" />
+		<% @words.each do |word| %>
+			<div class="translate-result">
+				<div class="result-image-details">
+					<p class="result-image-query-text"><%= word[:text] %></p>
+				</div>
+				<img src="<%= word[:image_url] %>" />
+			</div>
 		<% end %>
 	</p>
